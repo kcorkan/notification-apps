@@ -1,0 +1,7 @@
+{
+    "name": "Notifier App",
+    "sdk": "2.1",
+    "version": "0.1",
+    "className": "RallyCommunity.app.NotifierApp",
+    "artifact": ""
+}
