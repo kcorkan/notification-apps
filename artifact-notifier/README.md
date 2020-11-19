@@ -6,7 +6,7 @@ This app makes use of the [@mention functionality in Rally](https://techdocs.bro
 
 ## Summary/Description
 
-![screenshot](./images/artifact-notifier-app.png "This is an example")
+![screenshot](../images/artifact-notifier-app.png "This is an example")
 
 This app provides a way to send notifications for artifacts that meet a specific criteria as defined by a query and (optionally) additional filters.  
 
@@ -18,7 +18,7 @@ Email notifications for Rally must be enabled in the subscription for users to g
 
 ##  Configuration
 
-![screenshot](./images/artifact-notifier-settings.png "This is an example")
+![screenshot](../images/artifact-notifier-settings.png "This is an example")
 
 The following configurations are available in the App Settings:
 
