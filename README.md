@@ -3,8 +3,8 @@
 This repository contains apps that take advantage of the [@mention functionality in Rally](https://techdocs.broadcom.com/us/en/ca-enterprise-software/agile-development-and-management/rally-platform-ca-agile-central/rally/using-top/check-status/collaborate-team-members.html#concept.dita_71e53b74d8a81fe2cd74f2fc276d0d1f68d12242_mentions) to notify Rally users with a message via email (if enabled in the subscription).  
 
 Apps in this repository:
-[Artifact Notifier App](#artifact-notifier-app)
-[Timebox Notifier App](#timebox-notifier-app)
+* [Artifact Notifier App](#artifact-notifier-app)
+* [Timebox Notifier App](#timebox-notifier-app)
 
 
 ## Artifact Notifier App
@@ -13,5 +13,8 @@ In order to get the most out of Rally visualizations and metrics at an enterpris
 
 Read more details about the Artifact Notifier app [here](./artifact-notifier/README.md).  Get the app html code [here](./artifact-notifier/deploy/Ugly.txt).  
 
+![screenshot](./images/artifact-notifier-app.png "This is an example")
 
 ## Timebox Notifier App
+
+TBD
