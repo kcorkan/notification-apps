@@ -4,6 +4,9 @@ In order to get the most out of Rally visualizations and metrics at an enterpris
 
 This app makes use of the [@mention functionality in Rally](https://techdocs.broadcom.com/us/en/ca-enterprise-software/agile-development-and-management/rally-platform-ca-agile-central/rally/using-top/check-status/collaborate-team-members.html#concept.dita_71e53b74d8a81fe2cd74f2fc276d0d1f68d12242_mentions) to notify users by email via the Rally product.  
 
+Please be sure to read the [caveats](#caveats) below before using.  
+
+
 ## Summary/Description
 
 ![screenshot](../images/artifact-notifier-app.png "This is an example")
