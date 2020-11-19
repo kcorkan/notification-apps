@@ -6,6 +6,8 @@ Apps in this repository:
 * [Artifact Notifier App](#artifact-notifier-app)
 * [Timebox Notifier App](#timebox-notifier-app)
 
+Instructions for installing Rally Apps using the Custom HTML app can be found here: 
+https://techdocs.broadcom.com/us/en/ca-enterprise-software/agile-development-and-management/rally-platform-ca-agile-central/rally/customizing-top/use-apps/app-catalog/custom-html.html
 
 ## Artifact Notifier App
 

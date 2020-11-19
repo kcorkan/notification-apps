@@ -50,6 +50,8 @@ When using this app, please be conscientious about sending notifications.  This 
 
 ## Development Notes
 
+Instructions for installing Rally Apps using the Custom HTML app can be found here: 
+https://techdocs.broadcom.com/us/en/ca-enterprise-software/agile-development-and-management/rally-platform-ca-agile-central/rally/customizing-top/use-apps/app-catalog/custom-html.html
 
 ### First Load
 
