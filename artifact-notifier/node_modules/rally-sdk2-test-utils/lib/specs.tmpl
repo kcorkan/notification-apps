@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>App SDK Spec Runner</title>
+
+    <% css.forEach(function(style){ %>
+    <link rel="stylesheet" type="text/css" href="<%= style %>">
+    <% }) %>
+
+    <% with (scripts) { %>
+    <% [].concat(polyfills, jasmine, boot, vendor, src, helpers, specs, reporters).forEach(function(script){ %>
+    <script type="text/javascript" src="<%= script %>"></script>
+    <% }) %>
+    <% }; %>
+</head>
+
+<body>
+</body>
+</html>
