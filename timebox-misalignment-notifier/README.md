@@ -1,59 +1,11 @@
-# Artifact Notifier App
-
-In order to get the most out of Rally visualizations and metrics at an enterprise level, the data should be governed and consistent across the organization.  Rally does not provide a way to enforce certain behaviors when creating or updating artifacts and typically the recommended course of action is to create a dashboard of items that do not meet a certain criteria to be reviewed with discussion on a regular cadence so that the items can be updated.  When this is not feasible, this app can help by providing a list of items that do not meet the configured criteria and providing the ability to send notifications to the users associated with those items.  
-
-This app makes use of the [@mention functionality in Rally](https://techdocs.broadcom.com/us/en/ca-enterprise-software/agile-development-and-management/rally-platform-ca-agile-central/rally/using-top/check-status/collaborate-team-members.html#concept.dita_71e53b74d8a81fe2cd74f2fc276d0d1f68d12242_mentions) to notify users by email via the Rally product.  
-
-**Please be sure to read the [caveats](#caveats) below before using.**
-
+# Timebox Misalignment Notifier
 
 ## Summary/Description
 
-![screenshot](../images/artifact-notifier-app.png "This is an example")
-
-This app provides a way to send notifications for artifacts that meet a specific criteria as defined by a query and (optionally) additional filters.  
-
-When the Send Notifications button is clicked, @mentions that trigger notifications are added to each artifact that meets the query and additional filter criteria.  The @mentions are added in the field (Text field or Discussion) configured in the App Settings.  
-
-The @mention call out the user associated with the user notification field specified in the App Settings. If the user notification field does not contain a user, there is an option to default to notifying the user in the Created By field.
-
-Email notifications for Rally must be enabled in the subscription for users to get an email as a result of the @mention.  
-
-##  Configuration
-
-![screenshot](../images/artifact-notifier-settings.png "This is an example")
-
-The following configurations are available in the App Settings:
-
-#### **Object Type** 
-The object type for the notifications
-
-#### **User to Notify** 
-The field on the artifact that contains the user to notify.  This must be a User reference field. 
-
-#### **Notify Creator if User Field is empty** 
-True or False.  If the User fields specified is empty, then @mention the creator of the artifact
-
-#### **Notification Field**
-Field to add the @mention to.  This can be either a text field or a discussion field.  If it is a text field, then the mention will be appended to the end of the text field.  Note that if adding the mention to the text field causes the text field to exceed its max limit, then the notification may not be added.  
-
-#### **Notification Message**
-The notification message to send in the mention.  
-
-#### **Query**
-The query to identify items eligible for notification.  
-
-## Caveats 
-If using a text field for notifications, and appending the notification causes the text field character limit to be exceeded, then the notification may not be added and an error may occur.  
-
-When using this app, please be conscientious about sending notifications.  This will cause emails to be sent to users on the items identified.  If the criteria is too broad, this could potentially send thousands of emails to a particular user or set of users.  Please be mindful of the impact the send notification button may have on system load and people's inboxes.  
+![screenshot](./images/screenshot.png "This is an example")
 
 ## Development Notes
 
-Instructions for installing Rally Apps using the Custom HTML app can be found here: 
-https://techdocs.broadcom.com/us/en/ca-enterprise-software/agile-development-and-management/rally-platform-ca-agile-central/rally/customizing-top/use-apps/app-catalog/custom-html.html
-
-Deployable html files can be found (here)[./deploy]
 
 ### First Load
 

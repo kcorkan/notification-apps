@@ -4,7 +4,7 @@
  *
  * Now allows for saving log.
  */
-Ext.define('CArABU.technicalservices.Logger',{
+Ext.define('RallyCommunity.app.Logger',{
 
     saveForLater: false,
     saveLines: 100,

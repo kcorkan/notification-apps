@@ -24,7 +24,7 @@ module.exports = function(grunt) {
         if ( config.css ) {
             config.css_files = config.css;
         } else {
-            config.css_files = grunt.file.expand( 'src/style/*.css' );
+            config.css_files = grunt.file.expand(['../base-app/src/style/*.css','src/style/*.css']);
         }
 
         config.js_contents = " ";

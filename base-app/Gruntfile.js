@@ -16,7 +16,7 @@ module.exports = function(grunt) {
         if ( config.javascript ) {
             config.js_files = config.javascript;
         } else {
-            config.js_files = grunt.file.expand(['../base-app/src/javascript/utils/*.js','../base-app/src/javascript/*.js','src/javascript/utils/*.js','src/javascript/*.js']);
+            config.js_files = grunt.file.expand(['src/javascript/utils/*.js','src/javascript/*.js']);
         }
 
         config.ugly_files = grunt.file.expand(['deploy/app.min.*.js']);

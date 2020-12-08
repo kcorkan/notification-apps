@@ -2,9 +2,9 @@
  * A link that pops up a version dialog box
  */
 
-Ext.define('Rally.technicalservices.InfoLink',{
+Ext.define('RallyCommunity.app.InfoLink',{
     extend: 'Rally.ui.dialog.Dialog',
-    alias: 'widget.tsinfolink',
+    alias: 'widget.rallyappinfolink',
 
     /**
      * @cfg {String} informationHtml
@@ -165,14 +165,18 @@ Ext.define('Rally.technicalservices.InfoLink',{
             cls: 'build-info',
             padding: 2,
             dock:'bottom',
-            html:"This app was created for the Rally Community."
+            html:"This app was created for the RallyCommunity."
         });
 
         if ( APP_BUILD_DATE ) {
             var build_html = Ext.String.format("Built on: {0} <br/>Built by: {1}",
                 APP_BUILD_DATE,
                 BUILDER);
-            
+
+            if ( ARTIFACT ) {
+                build_html = build_html + "<br/>Source artifact: " + ARTIFACT;
+            }
+
             this.addDocked({
                 xtype:'container',
                 cls: 'build-info',

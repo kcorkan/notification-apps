@@ -11,7 +11,8 @@ Ext.define("UserNotification.Base", {
         notificationUserField: null,
         notificationField: null,
         defaultToCreator: false,
-        createdByField: 'CreatedBy'
+        createdByField: 'CreatedBy',
+        identifierField: null 
     
     },
     
@@ -26,14 +27,20 @@ Ext.define("UserNotification.Base", {
         }
         this.fireEvent('notifyerror',"Base class implemented, no message sent.");
     },
+    getRecordIdentifier: function(){
+        return this.record.get('FormattedID') || this.record.get('Name') || this.record.get('_ref');
+    },
+    getNotificationField: function(){
+        return this.notificationField;
+    },
     _buildNotificationText: function (){
         var userUUID = this._getUserNotificationFieldUUID(this.record);
         if (!userUUID){
-            this.fireEvent('notifyerror','No user found to mention for ' + this.record.get('FormattedID'));
+            this.fireEvent('notifyerror','No user found to mention for ' + this.getRecordIdentifier());
             return null; 
         }
         if (!this.messageText){
-            this.fireEvent('notifyerror','No message text specified for ' + this.record.get('FormattedID'));
+            this.fireEvent('notifyerror','No message text specified for ' + this.getRecordIdentifier());
             return null; 
         }
 
@@ -41,14 +48,14 @@ Ext.define("UserNotification.Base", {
         return Ext.String.format(message, userUUID, this.messageText, this.notificationColor);
     },
     _getUserNotificationFieldUUID: function(){
-        var notificationField = this.notificationUserField,
+        var userField = this.notificationUserField,
             useCreator = this.defaultToCreator;
 
-        if (!notificationField){
+        if (!userField && !useCreator && !this.defaultNotificationUserUUID){
             return null; 
         }
 
-        var uuid = this.record && this.record.get(notificationField) && this.record.get(notificationField)._refObjectUUID || null;
+        var uuid = this.record && this.record.get(userField) && this.record.get(userField)._refObjectUUID || null;
         if (!uuid && useCreator){
             uuid = this.record && this.record.get(this.createdByField)._refObjectUUID || null;
         }
@@ -63,17 +70,18 @@ Ext.define("UserNotification.TextField", {
             this.fireEvent('notifyerror',"No record provided.");    
             return;
         }
-
-        var txt = this.record.get(this.notificationField) || "";
+      
+        var txt = this.record.get(this.getNotificationField()) || "";
         var mention = this._buildNotificationText();
         if (mention === null){
             return; 
         }
 
-        var mention = Ext.String.format("{0} <br/>{1} {2}",txt, Rally.util.DateTime.formatWithDefaultDateTime(new Date()), mention); 
-        var formattedID = this.record.get('FormattedID');
-
-        this.record.set(this.notificationField,mention);
+        mention = Ext.String.format("{0} <br/>{1} {2}",txt, Rally.util.DateTime.formatWithDefaultDateTime(new Date()), mention); 
+        
+        var formattedID = this.getRecordIdentifier();
+        console.log('notification',this.getNotificationField(),mention)
+        this.record.set(this.getNotificationField(),mention);
         this.record.save({
             callback: function(result, operation) {
                 if(operation.wasSuccessful()) {
@@ -90,7 +98,7 @@ Ext.define("UserNotification.TextField", {
 Ext.define("UserNotification.Discussion", {
     extend: 'UserNotification.Base', 
     send: function(){
-        console.log("send discussion");
+    
         if (!this.record){
             this.fireEvent('notifyerror',"No record provided.");    
             return;
@@ -103,7 +111,7 @@ Ext.define("UserNotification.Discussion", {
             return; 
         }
 
-        var formattedID = this.record.get('FormattedID');
+        var formattedID = this.getRecordIdentifier();
 
         discussions.load({
             callback: function() {
