@@ -51,6 +51,8 @@ If using a text field for notifications, and appending the notification causes t
 
 When using this app, please be conscientious about sending notifications.  This will cause emails to be sent to users on the items identified.  If the criteria is too broad, this could potentially send thousands of emails to a particular user or set of users.  Please be mindful of the impact the send notification button may have on system load and people's inboxes.  
 
+These apps are provided in an AS-IS state and should be validated by the users planning to implement them in a production environment.  These apps are not supported by the Rally Support team.  If you find an issue with the app, please report the issue via GitHub repositiory by creating a new issue.  
+
 ## Development Notes
 
 Instructions for installing Rally Apps using the Custom HTML app can be found here: 

@@ -24,3 +24,7 @@ In order to get the most out of Rally visualizations and metrics at an enterpris
 Read more details about the Timebox Misalignment Notifier app [here](./timebox-misalignment-notifier/README.md).  Get the app html code [here](./timebox-misalignment-notifier/deploy/Ugly.txt).  
 
 ![screenshot](./images/timebox-misalignment-notifier-app.png "This is an example")
+
+
+
+##### NOTE: These apps are provided in an AS-IS state and should be validated by the users planning to implement them in a production environment.  These apps are not supported by the Rally Support team.  If you find an issue with the app, please report the issue via GitHub repositiory by creating a new issue.  
