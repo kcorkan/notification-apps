@@ -1,10 +1,55 @@
 # Timebox Misalignment Notifier
 
+In order to get the most out of Rally visualizations and metrics at an enterprise level, the data should be governed and consistent across the organization.  Rally does not provide a way to enforce certain behaviors when creating or updating timeboxes.  The timebox misalignment notification app uses the currently selected project's timeboxes (either Iteration or Release) as a reference and looks for all timeboxes in the project scope (or workspace) that are not aligned with the name, start date and end dates.  These timeboxes will be listed in the grid and mentions added when the button is clicked.  
+
+This app makes use of the [@mention functionality in Rally](https://techdocs.broadcom.com/us/en/ca-enterprise-software/agile-development-and-management/rally-platform-ca-agile-central/rally/using-top/check-status/collaborate-team-members.html#concept.dita_71e53b74d8a81fe2cd74f2fc276d0d1f68d12242_mentions) to notify users by email via the Rally product.  
+
+**Please be sure to read the [caveats](#caveats) below before using.**
+
 ## Summary/Description
 
-![screenshot](./images/screenshot.png "This is an example")
+![screenshot](../images/timebox-misalignment-notifier-app.png "This is an example")
 
-## Development Notes
+This app provides a way to send notifications for timeboxes that are misaligned with the timeboxes in the currently selected project scope.  
+
+When the Send Notifications button is clicked, @mentions that trigger notifications are added to each timebox that meets the query and additional filter criteria.  The @mentions are added in the field (Text field) configured in the App Settings.  
+
+The @mention call out the user associated with the user notification field specified in the App Settings. If the user notification field does not contain a user, there is an option to specify a default user to be notified in the App Settings.
+
+Email notifications for Rally must be enabled in the subscription for users to get an email as a result of the @mention.  
+
+If a user is not a Workspace or Subscription administrator, the *Send Notifications* button will not be visible and users will only be able to see misaligned timeboxes, but will not have the option of updating them with notifications.  
+
+## Configuration
+![screenshot](../images/timebox-misalignment-notifier-settings.png "This is an example")
+
+The following configurations are available in the App Settings:
+
+#### **Object Type** 
+The timebox type for the notifications - either Iteration or Release
+
+#### **User to Notify** 
+The field on the artifact that contains the user to notify.  This must be a User reference field.  If a User reference field does not exist on the timebox object, then a Default User will need to be selected. 
+
+#### **Default User to Notify**
+User to notify if there is no user in the User to Notify field, or if there is not an available User to Notify field on the timebox.  
+
+#### **Notification Field**
+Field to add the @mention to.  This can be either a text field or a discussion field.  If it is a text field, then the mention will be appended to the end of the text field.  Note that if adding the mention to the text field causes the text field to exceed its max limit, then the notification may not be added.  
+
+#### **Notification Message**
+The notification message to send in the mention.  
+
+#### **Query**
+The query to identify items eligible for notification.  For the timebox notifier, this will further refine the misaligned timeboxes.  Note that adding an additional query here may result in missing misaligned timeboxes.  
+
+#### **Saftey Limit**
+This is the max number of records to update with notifications.  This is the prevent the mass accidental update of items (and mass emails) should an erroroneous query be used.  
+
+## Caveats 
+If using a text field for notifications, and appending the notification causes the text field character limit to be exceeded, then the notification may not be added and an error may occur.  
+
+When using this app, please be conscientious about sending notifications.  This will cause emails to be sent to users on the items identified.  If the criteria is too broad, this could potentially send thousands of emails to a particular user or set of users.  Please be mindful of the impact the send notification button may have on system load and people's inboxes.  
 
 
 ### First Load

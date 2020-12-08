@@ -19,6 +19,9 @@ The @mention call out the user associated with the user notification field speci
 
 Email notifications for Rally must be enabled in the subscription for users to get an email as a result of the @mention.  
 
+If a user is not a Workspace or Subscription administrator, the *Send Notifications* button will not be visible and users will only be able to see artifacts that meet the criteria, but will not have the option of updating them with notifications.  
+
+
 ##  Configuration
 
 ![screenshot](../images/artifact-notifier-settings.png "This is an example")

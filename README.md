@@ -4,7 +4,7 @@ This repository contains apps that take advantage of the [@mention functionality
 
 Apps in this repository:
 * [Artifact Notifier App](#artifact-notifier-app)
-* [Timebox Notifier App](#timebox-notifier-app)
+* [Timebox Notifier App](#timebox-misalignment-notifier-app)
 
 Instructions for installing Rally Apps using the Custom HTML app can be found here: 
 https://techdocs.broadcom.com/us/en/ca-enterprise-software/agile-development-and-management/rally-platform-ca-agile-central/rally/customizing-top/use-apps/app-catalog/custom-html.html
@@ -17,6 +17,10 @@ Read more details about the Artifact Notifier app [here](./artifact-notifier/REA
 
 ![screenshot](./images/artifact-notifier-app.png "This is an example")
 
-## Timebox Notifier App
+## Timebox Misalignment Notifier App
 
-TBD
+In order to get the most out of Rally visualizations and metrics at an enterprise level, the data should be governed and consistent across the organization.  Rally does not provide a way to enforce certain behaviors when creating or updating timeboxes.  The timebox misalignment notification app uses the currently selected project's timeboxes (either Iteration or Release) as a reference and looks for all timeboxes in the project scope (or workspace) that are not aligned with the name, start date and end dates.  These timeboxes will be listed in the grid and mentions added when the button is clicked.  
+
+Read more details about the Timebox Misalignment Notifier app [here](./timebox-misalignment-notifier/README.md).  Get the app html code [here](./timebox-misalignment-notifier/deploy/Ugly.txt).  
+
+![screenshot](./images/timebox-misalignment-notifier-app.png "This is an example")
