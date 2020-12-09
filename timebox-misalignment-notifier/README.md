@@ -12,6 +12,8 @@ This app makes use of the [@mention functionality in Rally](https://techdocs.bro
 
 This app provides a way to send notifications for timeboxes that are misaligned with the timeboxes in the currently selected project scope.  
 
+**NOTE that this app assumes that timeboxes do NOT have overlapping cadences.  If they do, then this app may flag timeboxes with overlaps in cadences.**  
+
 When the Send Notifications button is clicked, @mentions that trigger notifications are added to each timebox that meets the query and additional filter criteria.  The @mentions are added in the field (Text field) configured in the App Settings.  
 
 The @mention call out the user associated with the user notification field specified in the App Settings. If the user notification field does not contain a user, there is an option to specify a default user to be notified in the App Settings.
@@ -48,6 +50,8 @@ This is the max number of records to update with notifications.  This is the pre
 
 ## Caveats 
 If using a text field for notifications, and appending the notification causes the text field character limit to be exceeded, then the notification may not be added and an error may occur.  
+
+**NOTE that this app assumes that timeboxes do NOT have overlapping cadences.  If they do, then this app may flag timeboxes with overlaps in cadences.**
 
 When using this app, please be conscientious about sending notifications.  This will cause emails to be sent to users on the items identified.  If the criteria is too broad, this could potentially send thousands of emails to a particular user or set of users.  Please be mindful of the impact the send notification button may have on system load and people's inboxes.  
 
